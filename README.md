@@ -1,19 +1,42 @@
-This is a template for course IDS706 Projects. It contains:
 
-1. `.devcontainer` includes a Dockerfile and devcontainer.json. The 'Dockerfile' within this folder specifies how the container should be built, and other settings in this directory may control development environment configurations.
+# Complex SQL query
 
-2. `workflows` includes GitHub Actions, which contain configuration files for setting up automated build, test, and deployment pipelines for your project.
+## Deaths & Insurance Database Overview
 
-3. `.gitignore` is used to specify which files or directories should be excluded from version control when using Git.
+This database, "Deaths&Insurance.db", provides insights into potentially excess deaths and health insurance coverage across the United States. It is comprised of two tables:
 
-4. `Makefile` is a configuration file used in Unix-based systems for automating tasks and building software. It contains instructions and dependencies for compiling code, running tests, and other development tasks.
+1. **Potentially_excess_deaths** contains data related to observed deaths, expected deaths, and potentially excess deaths for different states, age ranges, and causes of death.
+2. **Health_Insurance_Coverage** provides data about health insurance coverage, uninsured rates, and various insurance metrics for different states.
 
-5. `README.md` is the instruction file for the readers.
+## Tables Description
 
-6. `requirements.txt` is to specify the dependencies (libraries and packages) required to run the project.
+**Potentially_excess_deaths**
+- Year: The year of data collection.
+- CauseofDeath: Cause of death.
+- State: State name.
+- StateFIPSCode: Federal Information Processing Standards (FIPS) code for the state.
+- HHSRegion: Health and Human Services (HHS) Region code.
+- AgeRange: Age range of the deceased individuals.
+- Benchmark: Data benchmark.
+- Locality: Locality type.
+- ObservedDeaths: The number of observed deaths.
+- Population: The population of the locality or state.
+- ExpectedDeaths: The number of expected deaths.
+- PotentiallyExcessDeaths: The number of potentially excess deaths.
+- PercentPotentiallyExcessDeaths: The percentage of potentially excess deaths.
 
-7. `test_main.py` is a test file for main.py that can successfully run in IDEs.
+**Health_Insurance_Coverage**
+- State: State name.
+- Various columns related to uninsured rates, insurance coverage changes, employer health insurance coverage, marketplace health insurance coverage, tax credits, Medicaid and Medicare enrollment for different years.
 
-8. `main.py` is a Python file.
+## The SQL Query 
 
-It used gitbuh actions to test and run. All processes are completed.
+The SQL Query can be executed in two ways:
+1. Use the "complex query.sql" and db file.
+2. Use the "main.py" and db file.
+
+Both approaches execute the same SQL Query.
+
+The provided SQL query aims to join the two tables on the State column and aggregate data to find the total observed deaths, potentially excess deaths, and the average percentage of potentially excess deaths for each state in 2015. Additionally, it fetches relevant health insurance data from 2015. The results are sorted based on the total number of potentially excess deaths.
+
+
