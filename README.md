@@ -32,7 +32,7 @@ This database, "Deaths&Insurance.db", provides insights into potentially excess 
 ## Package with SQL-tool 
 
 ### **1. Installation**
-Navigate to the directory /Mini_Project7_LinHui with files: 'setup.py', 'main.py', and 'Deaths&Insurance.db'.
+Navigate to the directory /Mini_Project7_LinHui with files: "setup.py", "main.py", and "Deaths&Insurance.db".
 
 Install the package using the following command:
 ```bash
